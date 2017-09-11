@@ -4,35 +4,55 @@ module.exports = function(models) {
   }
 
   const user_name = function(req, res, next) {
-  //  var name = {};
+    //  var name = {};
     var WaitersName = req.body.username;
     res.redirect('waiter/' + WaitersName)
     // console.log(name);
   }
   const waiter = function(req, res, next) {
-    var name = req.params.username;
-    console.log('Name:', name);
+    var WaitersName = req.params.username;
+    console.log('Name:', WaitersName);
     res.render('waiter', {
-      waitersName: name
+      waitersName: WaitersName
     })
   }
   const waiter2 = function(req, res, next) {
-      var name = req.params.username;
+    var WaitersName = req.params.username;
     var days = req.body.days;
-    console.log(days);
-    
+    models.waiters.findOne({
+      WaitersName: req.params.username
+    }, function(err, results) {
+      if (err) {
+        return next(err)
+      }
+      if (results) {
+        req.flash('error', 'name is already entered!!!')
 
-    res.render('waiter', {
-      days: days,
-      waitersName:name
+      } else {
+
+        models.waiters.create({
+          days: req.body.days,
+          WaitersName: req.params.username
+        }, function(err, results) {
+          if (err) {
+            return next(err)
+          }
+          console.log(results);
+        })
+      }
     })
-  }
+  
+  res.render('waiter', {
+    days: days,
+    waitersName: WaitersName
+  })
+}
+//  console.log(days);
 
-
-  return {
-    home,
-    user_name,
-    waiter,
-    waiter2
-  }
+return {
+  home,
+  user_name,
+  waiter,
+  waiter2
+}
 }
