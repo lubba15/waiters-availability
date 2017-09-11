@@ -1,0 +1,33 @@
+
+{
+  "name": "waiter_webapp",
+  "version": "1.0.0",
+  "description": "waiters_availability",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lubba15/waiter_webapp.git"
+  },
+  "author": "lubabalo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lubba15/waiter_webapp/issues"
+  },
+  "homepage": "https://github.com/lubba15/waiter_webapp#readme"
+}

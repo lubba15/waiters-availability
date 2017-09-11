@@ -1,0 +1,9 @@
+
+body {
+    background-color: lightblue;
+    font-size: 27px;
+}
+
+ li{
+   list-style-type: none;
+ }

@@ -1,0 +1,26 @@
+<h1>Waiter Availability</h1>
+
+
+<link rel="stylesheet" href="/css/waiter.css">
+
+
+<p><b>Hello, {{waitersName}}...please select 3 days you want to work during the week..</b></p>
+<br>
+<form class="check" action="" method="post">
+  <input type="checkbox" name="days" value="Sunday">Sunday
+  <input type="checkbox" name="days" value="Monday">Monday
+  <input type="checkbox" name="days" value="Tuesday">Tuesday
+  <input type="checkbox" name="days" value="Wenesday">Wenesday
+  <input type="checkbox" name="days" value="Thursday">Thursday
+  <input type="checkbox" name="days" value="Friday">Friday
+  <input type="checkbox" name="days" value="Saturday">Saturday
+  <button type="submit" name="bttn">Submit</button>
+</form>
+<br>
+
+<ul>
+  <li>
+    <p>{{days}}</p>
+  </li>
+</ul>
+<a href="/index">Add waiters name</a>
