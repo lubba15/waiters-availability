@@ -4,7 +4,6 @@ module.exports = function(models) {
   }
 
   const user_name = function(req, res, next) {
-    //  var name = {};
     var WaitersName = req.body.username;
     res.redirect('waiter/' + WaitersName)
     // console.log(name);
@@ -16,7 +15,7 @@ module.exports = function(models) {
       waitersName: WaitersName
     })
   }
-  const waiter2 = function(req, res, next) {
+  const waiters = function(req, res, next) {
     var WaitersName = req.params.username;
     var days = req.body.days;
     models.waiters.findOne({
@@ -26,7 +25,7 @@ module.exports = function(models) {
         return next(err)
       }
       if (results) {
-        req.flash('error', 'name is already entered!!!')
+        // req.flash('error', 'name is already entered!!!')
 
       } else {
 
@@ -41,18 +40,22 @@ module.exports = function(models) {
         })
       }
     })
-  
+
   res.render('waiter', {
     days: days,
     waitersName: WaitersName
   })
 }
-//  console.log(days);
+// //  console.log(days);
+// const admin = function (req, res, next) {
+//     var WaitersName = req.params.username;
+//     res.render('days');
+// }
 
 return {
   home,
   user_name,
   waiter,
-  waiter2
+  waiters
 }
 }

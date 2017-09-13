@@ -37,16 +37,15 @@ app.use(flash());
 app.get('/', function(req,res){
   res.redirect('index')
 })
+//home page
 app.get('/index',waiterRoutes.home);
 app.post('/index',waiterRoutes.user_name);
 
-
-// GET	/waiters/:username	Show waiters a screen where they can select the days they can work on
+//waiter page
 app.get('/waiter/:username', waiterRoutes.waiter);
-
-// POST	/waiters/:username	Send the days a waiter can work to the server.
-app.post('/waiter/:username',waiterRoutes.waiter2)
-// GET	/days	Show your sister which days waiters can work
+app.post('/waiter/:username',waiterRoutes.waiters)
+//admin page
+// app.get('/days',waiterRoutes.admin)
 
 const port = process.env.PORT || 3005;
 

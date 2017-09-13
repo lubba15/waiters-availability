@@ -1,9 +1,26 @@
-
 body {
-    background-color: lightblue;
-    font-size: 27px;
+  background-color: lightblue;
+  /*background-image: url('waiter.jpg');*/
+  font-size: 27px;
 }
 
- li{
-   list-style-type: none;
- }
+.style {
+  padding-left: 34%;
+}
+
+.check {
+  padding-left: 13%;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  padding-left: 19%;
+  font-size: 334%;
+}
+
+p {
+  padding-left: 19%;
+}

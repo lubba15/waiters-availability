@@ -1,10 +1,10 @@
-<h1>Waiter Availability</h1>
+<header>
+  <title>Waiter Availability</title>
+  <link rel="stylesheet" href="/css/waiter.css">
+  <h1>Waiter Availability</h1>
+</header>
 
-
-<link rel="stylesheet" href="/css/waiter.css">
-
-
-<p><b>Hello, {{waitersName}}...please select 3 days you want to work during the week..</b></p>
+<p><b>Hello, {{waitersName}}.please select 3 days you want to work during the week.</b></p>
 <br>
 <form class="check" action="" method="post">
   <input type="checkbox" name="days" value="Sunday">Sunday
@@ -23,5 +23,6 @@
     <p>{{days}}</p>
   </li>
 </ul>
-{{messages.error}}
-<a href="/index">Add waiters name</a>
+<p>{{messages.error}}</p>
+<br>
+<a href="/index">Add waiter's name</a>
