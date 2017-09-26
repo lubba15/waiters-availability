@@ -1,7 +1,7 @@
 body {
   background-color: lightblue;
-  /*background-image: url('waiter.jpg');*/
   font-size: 27px;
+  font-style: italic;
 }
 
 .style {
@@ -23,4 +23,58 @@ h1 {
 
 p {
   padding-left: 19%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 18%;
+  font-size: 24px;
+  margin-left: 11%;
+}
+
+tr {
+  background-color: White;
+}
+
+.firstColor {
+  background-color: yellow;
+}
+
+.secondColor {
+  background-color: green;
+}
+
+.thirdColor {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+  vertical-align: middle;
+  border-radius: 9em;
+  display: table-cell;
+  width: 6em;
+  height: 2em;
+  font-size: 1em;
+}
+
+.green {
+  background-color: green;
+  vertical-align: middle;
+  border-radius: 9em;
+  display: table-cell;
+  width: 7em;
+  height: 2em;
+  font-size: 1em;
+}
+
+.red {
+  background-color: red;
+  vertical-align: middle;
+  border-radius: 9em;
+  display: table-cell;
+  width: 7em;
+  height: 2em;
+  font-size: 1em;
 }

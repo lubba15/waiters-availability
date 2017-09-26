@@ -1,52 +1,78 @@
-<h1>WAiter's shadule</h1>
+<head>
+  <title>Waiter Availability</title>
+  <link rel="stylesheet" href="/css/waiter.css">
+</head>
+<h1>Admin Page</h1>
+</div>
+<div class="yellow">More waiters
+</div>
+<div class="green">Enough waiters
+</div>
+<div class="red">Over subscribed
+</div><br>
 
 <table frame="box">
   <thead>
     <tr>
-      <th>Sunday</th>
       <th>Monday</th>
       <th>Tuesday</th>
-      <th>Wenesday</th>
+      <th>Wednesday</th>
       <th>Thursday</th>
       <th>Friday</th>
       <th>Saturday</th>
+      <th>Sunday</th>
     </tr>
-
   </thead>
 
-  <td>
-    {{# each Sunday}}
-      {{this}}
-      {{/each}}
-  </td>
-  <td>
-    {{# each Monday}}
-      {{this}}
-      {{/each}}
-  </td>
-  <td>
-    {{# each Tuesday}}
-      {{this}}
-      {{/each}}
-  </td>
-  <td>
-    {{# each Wenesday}}
-      {{this}}
-      {{/each}}
-  </td>
-  <td>
-    {{# each Thursday}}
-      {{this}}
-      {{/each}}
-  </td>
-  <td>
-    {{# each Friday}}
-      {{this}}
-      {{/each}}
-  </td>
-  <td>
-    {{# each Saturday}}
-      {{this}}
-      {{/each}}
-  </td>
+  <tr>
+    <td class= {{mondayColor}}>
+      <ul>
+        {{#Monday}}
+          <li>{{this}}</li>
+        {{/Monday}}
+    </td>
+
+    <td class= {{TuesdayColor}}>
+      {{#Tuesday}}
+        <li>{{this}}</li>
+      {{/Tuesday}}
+    </td>
+
+    <td class= {{WednesdayColor}}>
+      {{#Wednesday}}
+        <li>{{this}}</li>
+      {{/Wednesday}}
+    </td>
+
+    <td class= {{ThursdayColor}}>
+      {{#Thursday}}
+        <li>{{this}}</li>
+      {{/Thursday}}
+    </td>
+
+    <td class= {{FridayColor}}>
+      {{#Friday}}
+        <li>{{this}}</li>
+      {{/Friday}}
+    </td>
+
+    <td class= {{SaturdayColor}}>
+      {{#Saturday}}
+        <li>{{this}}</li>
+      {{/Saturday}}
+    </td>
+
+    <td class= {{SundayColor}}>
+      {{#Sunday}}
+        <li>{{this}}</li>
+      {{/Sunday}}
+
+      </ul>
+    </td>
+  </tr>
 </table>
+
+
+<form class="" action="/reset" method="post">
+  <button type="submit" name="reset" value="">Reset</button>
+</form>
