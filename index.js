@@ -51,7 +51,7 @@ app.post('/admin',waiterRoutes.admin);
 app.get('/reset',waiterRoutes.reset);
 app.post('/reset',waiterRoutes.reset);
 
-const port = process.env.PORT || 3020;
+const port = process.env.PORT || 5000;
 
 app.listen(port, function() {
   console.log('Web app started on port : ' + port);

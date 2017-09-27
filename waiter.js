@@ -10,12 +10,22 @@ module.exports = function(models) {
   }
   const waiter = function(req, res, next) {
     var WaitersName = req.params.username;
-    console.log('user_name:', WaitersName);
-    res.render('waiter', {
-      waitersName: WaitersName
+    models.waiters.findOne({
+      WaitersName: req.params.username
+    }, function(err, results) {
+      if (err) {
+        return next(err)
+      }
+      console.log('user_name:', WaitersName);
+      if (WaitersName) {
+
+        res.render('waiter', {
+          days: results.day,
+          waitersName: WaitersName
+        })
+      }
     })
   }
-
   const waiters = function(req, res, next) {
     var WaitersName = req.params.username;
     var days = req.body.days;
@@ -169,7 +179,7 @@ module.exports = function(models) {
         if (err) {
           return next(err)
         }
-        res.render('waite')
+        res.render('waiter')
       })
   }
 
