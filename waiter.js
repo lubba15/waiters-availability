@@ -4,28 +4,48 @@ module.exports = function(models) {
   }
 
   const user_name = function(req, res, next) {
-    var WaitersName = req.body.username
-    res.redirect('waiter/' + WaitersName)
-    // console.log(name);
+    var WaitersName = req.body.waiter
+    if (!WaitersName) {
+    return  next()
+    }else {
+return      res.redirect('waiter/' + WaitersName)
+    }
+
   }
+
   const waiter = function(req, res, next) {
     var WaitersName = req.params.username;
+    // var days = req.body.days;
     models.waiters.findOne({
       WaitersName: req.params.username
     }, function(err, results) {
       if (err) {
         return next(err)
       }
-      console.log('user_name:', WaitersName);
-      if (WaitersName) {
+      // console.log('waiters_name:', WaitersName);
+      // console.log("working_days:", results.days);
+      if (results) {
+        var waitersDays = results.days;
+        var selectedDays = {};
 
-        res.render('waiter', {
-          days: results.day,
-          waitersName: WaitersName
-        })
+        var mapDays = function(working_days) {
+          for (var i = 0; i < waitersDays.length; i++) {
+            var workersDays = waitersDays[i]
+            if (selectedDays[workersDays] === undefined) {
+              selectedDays[workersDays] = 'checked';
+            }
+          }
+          return selectedDays;
+        }
+        mapDays(waitersDays);
       }
+      res.render('waiter', {
+        waitersName: WaitersName,
+        selectedDays: selectedDays
+      })
     })
   }
+
   const waiters = function(req, res, next) {
     var WaitersName = req.params.username;
     var days = req.body.days;
@@ -41,10 +61,10 @@ module.exports = function(models) {
           if (err) {
             return next(err)
           }
-        })
-        res.render('waiter', {
-          days: days,
-          waitersName: WaitersName
+          res.render('waiter', {
+            days: days,
+            waitersName: WaitersName
+          })
         })
       }
 
@@ -178,8 +198,12 @@ module.exports = function(models) {
       function(err) {
         if (err) {
           return next(err)
+
         }
-        res.render('waiter')
+        var message = "Successfully removed,Schedule is empty."
+        res.render('days', {
+          message: message
+        })
       })
   }
 

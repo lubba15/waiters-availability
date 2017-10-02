@@ -2,7 +2,7 @@
   <title>Waiter Availability</title>
   <link rel="stylesheet" href="/css/waiter.css">
 </head>
-<h1>Admin Page</h1>
+<h1>Waiter's Schedule</h1>
 </div>
 <div class="yellow">More waiters
 </div>
@@ -10,7 +10,8 @@
 </div>
 <div class="red">Over subscribed
 </div><br>
-
+<br>
+<br>
 <table frame="box">
   <thead>
     <tr>
@@ -27,43 +28,43 @@
   <tr>
     <td class= {{mondayColor}}>
       <ul>
-        {{#Monday}}
+        {{# Monday}}
           <li>{{this}}</li>
         {{/Monday}}
     </td>
 
     <td class= {{TuesdayColor}}>
-      {{#Tuesday}}
+      {{# Tuesday}}
         <li>{{this}}</li>
       {{/Tuesday}}
     </td>
 
     <td class= {{WednesdayColor}}>
-      {{#Wednesday}}
+      {{# Wednesday}}
         <li>{{this}}</li>
       {{/Wednesday}}
     </td>
 
     <td class= {{ThursdayColor}}>
-      {{#Thursday}}
+      {{# Thursday}}
         <li>{{this}}</li>
       {{/Thursday}}
     </td>
 
     <td class= {{FridayColor}}>
-      {{#Friday}}
+      {{# Friday}}
         <li>{{this}}</li>
       {{/Friday}}
     </td>
 
     <td class= {{SaturdayColor}}>
-      {{#Saturday}}
+      {{# Saturday}}
         <li>{{this}}</li>
       {{/Saturday}}
     </td>
 
     <td class= {{SundayColor}}>
-      {{#Sunday}}
+      {{# Sunday}}
         <li>{{this}}</li>
       {{/Sunday}}
 
@@ -72,7 +73,7 @@
   </tr>
 </table>
 
-
-<form class="" action="/reset" method="post">
-  <button type="submit" name="reset" value="">Reset</button>
+<form class="" action="/remove" method="post">
+  <button type="submit" name="reset"  required="">Reset</button>
 </form>
+<p>{{message}}</p>

@@ -34,24 +34,24 @@ app.use(session({
   }
 }));
 app.use(flash());
-//home page
+
 app.get('/', function(req,res){
   res.redirect('index')
 })
+
 app.get('/index',waiterRoutes.home);
 app.post('/index',waiterRoutes.user_name);
 
-//admin page
-//waiter page
 app.get('/waiter/:username', waiterRoutes.waiter);
 app.post('/waiter/:username',waiterRoutes.waiters);
+
 app.get('/admin',waiterRoutes.admin);
 app.post('/admin',waiterRoutes.admin);
 
-app.get('/reset',waiterRoutes.reset);
-app.post('/reset',waiterRoutes.reset);
+app.get('/remove',waiterRoutes.reset);
+app.post('/remove',waiterRoutes.reset);
 
-const port = process.env.PORT || 5000;
+var port = process.env.PORT || 5000;
 
 app.listen(port, function() {
   console.log('Web app started on port : ' + port);
