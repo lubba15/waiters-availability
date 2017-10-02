@@ -1,21 +1,20 @@
 module.exports = function(models) {
   const home = function(req, res) {
-    res.render('index');
+    res.render('home');
   }
 
   const user_name = function(req, res, next) {
-    var WaitersName = req.body.waiter
-    if (!WaitersName) {
-    return  next()
-    }else {
-return      res.redirect('waiter/' + WaitersName)
-    }
+    var WaitersName = req.body.username
+    res.redirect('waiter/' + WaitersName)
 
   }
-
   const waiter = function(req, res, next) {
+
+    // var WaitersName = req.body.WaitersName.subString(0,1);
+    // var firstL = req.body.firstLetter.subString(0,1).toUpperCase();
+    // var waiters_name = WaitersName.waiters_name.replace(WaitersName,waiters_name);
+
     var WaitersName = req.params.username;
-    // var days = req.body.days;
     models.waiters.findOne({
       WaitersName: req.params.username
     }, function(err, results) {
@@ -61,10 +60,10 @@ return      res.redirect('waiter/' + WaitersName)
           if (err) {
             return next(err)
           }
-          res.render('waiter', {
-            days: days,
-            waitersName: WaitersName
-          })
+        res.render('waiter', {
+          days: days,
+          waitersName: WaitersName
+        })
         })
       }
 
@@ -200,10 +199,9 @@ return      res.redirect('waiter/' + WaitersName)
           return next(err)
 
         }
-        var message = "Successfully removed,Schedule is empty."
-        res.render('days', {
-          message: message
-        })
+
+        var message = "Successfully removed,Schedule is empty noe."
+        res.render('days', {message : message})
       })
   }
 

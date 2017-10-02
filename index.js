@@ -36,11 +36,11 @@ app.use(session({
 app.use(flash());
 
 app.get('/', function(req,res){
-  res.redirect('index')
+  res.redirect('home')
 })
 
-app.get('/index',waiterRoutes.home);
-app.post('/index',waiterRoutes.user_name);
+app.get('/home',waiterRoutes.home);
+app.post('/home',waiterRoutes.user_name);
 
 app.get('/waiter/:username', waiterRoutes.waiter);
 app.post('/waiter/:username',waiterRoutes.waiters);
