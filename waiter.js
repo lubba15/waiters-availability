@@ -200,7 +200,7 @@ module.exports = function(models) {
 
         }
 
-        var message = "Successfully removed,Schedule is empty noe."
+        var message = "Successfully removed,Schedule is empty you can use the system for a new week."
         res.render('days', {message : message})
       })
   }
