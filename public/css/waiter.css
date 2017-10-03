@@ -4,19 +4,26 @@
       font-style: italic;
     }
 
-    a {
-      padding-right: 34px;
+
+    .checkbox {
+      padding-left: 8%;
     }
 
     .style {
       padding-left: 34%;
     }
 
-    .check {
-      padding-left: 13%;
+    .home {
+      font-size: 73%;
+      margin-top: -3em;
+      margin-left: 7em;
     }
 
-    li {
+    b {
+      padding-left: 27%;
+    }
+
+    ul {
       list-style-type: none;
     }
 
